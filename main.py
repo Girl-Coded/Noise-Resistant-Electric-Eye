@@ -15,10 +15,9 @@ def main():
     connect_wifi()
     if not message_sent:
         current_time = utime.localtime()  # Gets current date and time
-        formatted_time = "{year:>04d}/{month:>02d}/{day:>02d} {HH:>02d}:{MM:>02d}:{SS:>02d}".format(year=current_time[0],
-                                                                                         month=current_time[1], day=current_time[2],HH=current_time[3], MM=current_time[4], SS=current_time[5])
-        
-        message = 'Testing sending at ' + formatted_time
+        formatted_time = "{HH:>02d}:{MM:>02d}:{SS:>02d}".format(HH=current_time[3], MM=current_time[4], SS=current_time[5])
+        formatted_date = "{month:>02d}/{day:>02d}/{year:>04d}".format(month=current_time[1], day=current_time[2], year=current_time[0])
+        message = 'Critical Safety Event at ' + formatted_time + ' on ' + formatted_date
         send_sms(environment.recipient, environment.sender, message, environment.auth_token, environment.account_sid)
         message_sent = True
         time.sleep(2)
