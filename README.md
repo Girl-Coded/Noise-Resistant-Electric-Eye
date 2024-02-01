@@ -67,6 +67,43 @@ Figure 9: Successful SMS Alert
 ### SMS Texting Pseudocode
 The button for testing we used initially is set as input with a pull up resistor. We used a button to test the logic of when the signal would be interrupted. We simulated that a button press would be the same thing as interrupting the transmitted signal. The signal is initially high, as the signal is submitting successfully. When the signal is interrupted, the signal goes to low, and triggers the simulated “button press.” 
 
+![Pseudocode.png](https://github.com/fqkammona/Noise-Resistant-Electric-Eye/blob/main/Lab-Images/Pseudocode.png) 
+
+## Roads Not Taken
+
+When it comes to roads not taken, it was important to understand that for most of our design we knew the direction we had wanted to proceed in. However, when it came to adopting our previous works to the demands of this project the way we wanted to filter out noise in our circuit was up in the air. Initially, we considered using a bandpass filter to isolate the lab-specified frequency. When constructing the filter, we first used filter designing websites to simulate what could be possible with that filtering method. When it came to analyzing those results, we realized that a bandpass filter would be more inaccurate with noise in terms of the ability to single out our desired frequency range. Consequently, we opted for a high pass filter in our initial detector block. This approach efficiently prioritized our signal frequency without complications from noise or the cost of intricate filter designs.
+
+![Table3.png](https://github.com/fqkammona/Noise-Resistant-Electric-Eye/blob/main/Lab-Images/Table3.png)
+
+## Project Retrospective
+The design and implementation of the receiver, especially its compatibility with the existing transmitter, demonstrated our team's ability to work with pre-existing systems and improve upon them. The successful integration of the SMS alert system displayed our team's versatility in incorporating software solutions with hardware designs.
+
+However, there were areas where we faced hurdles. We encountered some initial challenges in detecting and amplifying the signal. But through collaboration and leveraging our past experiences, we managed to come up with solutions. The use of buffer design and the main voltage amplifier played a crucial role in enhancing the system's performance.
+
+While our design met most of the lab requirements, there were moments of trial and error, especially in the realms of light resistance and performance. Ensuring that the device maintained its utility in the presence of strong light sources was challenging. By iterative testing and tweaking, we got to a decent endpoint in terms of filtering out other noise. 
+
+In executing the lab, our strategy centered on playing to our strengths. We deliberated on the optimal approach: Diego and Fatima collaborated on the hardware, while Sirena and Fatima tackled the embedded portion. Fatima wrote the code to send the SMS texts, and Sirena wrote the logic for triggering the Pico W to send the alerts based off of the signal. We ensured an equitable distribution of responsibilities and had weekly meetings to check our progress and ask for support where needed. Admittedly, our biggest stumbling block was time management, which delayed our completion. Going forward, we plan to set definitive deadlines for tasks to avoid these delays.
+
+For organizational efficiency, we employed Asana for task and workflow management, maintaining regular weekly meetings to track progress. Adopting an agile methodology, we streamlined our design and testing processes to ensure maximum efficiency.
+
+![Figure10.png](https://github.com/fqkammona/Noise-Resistant-Electric-Eye/blob/main/Lab-Images/Figure10.png) 
+
+Figure 10: Asana Tasks
+
+![Figure11.png](https://github.com/fqkammona/Noise-Resistant-Electric-Eye/blob/main/Lab-Images/Figure11.png) 
+
+Figure 11: Gantt Chart
 
 
+## Appendix & References 
+
+Micropython.org. (n.d.). utime – time related functions. Retrieved from https://docs.micropython.org/en/v1.9.3/wipy/library/utime.html  
+
+Raspberry Pi Foundation. (n.d.). Connecting to the internet with Pico W.
+Retrieved from https://datasheets.raspberrypi.com/picow/connecting-to-the-internet-with-pico-w.pdf_gl=1*vpm2gr*_ga*ODg4MDQxMzQwLjE2OTYxOTgwNDA.*_ga_22FD70LWDS*MTY5NjE5ODAzOS4xLjEuMTY5NjE5ODA2Ny4wLjAuMA.. 
+
+Raspberry Pi Foundation. (n.d.). Pico W datasheet. 
+Retrieved from https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf_gl=1*1pxt7cb*_ga*ODg4MDQxMzQwLjE2OTYxOTgwNDA.*_ga_22FD70LWDS*MTY5NjE5ODAzOS4xLjEuMTY5NjE5ODA3Ny4wLjAuMA.. 
+
+Pinout.xyz. (n.d.). Pico pinout. Retrieved from https://pico.pinout.xyz 
 
